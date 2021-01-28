@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RadioApp;
 
 namespace RadioWPF
 {
@@ -20,10 +21,30 @@ namespace RadioWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private Radio _radio;
+        private int channelSelected;
+
         public MainWindow()
         {
+            _radio = new Radio();
             InitializeComponent();
         }
 
+        private void BtnOn_Click(object sender, RoutedEventArgs e)
+        {
+            _radio.TurnOn();
+        }
+
+        private void BtnOff_Click(object sender, RoutedEventArgs e)
+        {
+            _radio.TurnOff();
+        }
+
+        private void BtnPlay_Click(object sender, RoutedEventArgs e)
+        {
+            string result = _radio.Play();
+            labelChannel.Content = result;
+        }
     }
 }
