@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadioApp", "RadioApp\RadioA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadioTests", "RadioTests\RadioTests.csproj", "{153906AD-403D-495C-AC13-8D96F03EEEDC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioWPF", "RadioWPF\RadioWPF.csproj", "{418B0D67-2C70-4E19-BEB5-FC69F5A6CA2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{153906AD-403D-495C-AC13-8D96F03EEEDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{153906AD-403D-495C-AC13-8D96F03EEEDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{153906AD-403D-495C-AC13-8D96F03EEEDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{418B0D67-2C70-4E19-BEB5-FC69F5A6CA2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{418B0D67-2C70-4E19-BEB5-FC69F5A6CA2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{418B0D67-2C70-4E19-BEB5-FC69F5A6CA2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{418B0D67-2C70-4E19-BEB5-FC69F5A6CA2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
