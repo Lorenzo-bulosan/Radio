@@ -6,4 +6,17 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Monokayu1-Transparent.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RadioApp\RadioApp.csproj" />
+    <ProjectReference Include="..\RadioTests\RadioTests.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Monokayu1-Transparent.png" />
+  </ItemGroup>
+
 </Project>

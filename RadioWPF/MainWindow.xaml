@@ -6,26 +6,62 @@
         xmlns:local="clr-namespace:RadioWPF"
         mc:Ignorable="d"
         Title="LKRadio" Height="450" Width="800">
-    
+
+    <!--Styles-->
+    <Window.Resources>
+
+        <!--digit styles-->
+        <Style TargetType="Button" >
+            <Setter Property="Background" Value="#FF073A3F"/>
+            <Setter Property="Foreground" Value="white"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontFamily" Value="Forte"/>
+        </Style>
+
+    </Window.Resources>
+
+
     <Grid>
 
         <!--Body-->
-        <Grid Margin="0,0,0,0" Background="White">
+        <Grid Margin="0,0,0,0" Background="#FF1F1F1F">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="557*"/>
+                <ColumnDefinition Width="45*"/>
+                <ColumnDefinition Width="198*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="117*"/>
+                <RowDefinition Height="117*"/>
+                <RowDefinition Height="200*"/>
             </Grid.RowDefinitions>
+
+
+            <Button x:Name="BtnOn" Tag="btnON" Grid.Column="2" Grid.Row="0" Content="On"  Margin="0,0,0,0"/>
+            <Button x:Name="BtnOff" Tag="btnOff" Grid.Column="2" Grid.Row="1" Content="Off"  Margin="0,0,0,0"/>
+            <Button x:Name="BtnPlay" Tag="btnPlay" Grid.Column="2" Grid.Row="2" Content="Play"  Margin="0,0,0,0"/>
+
+
+            <Label x:Name="labelChannel" Content="Channel: " HorizontalAlignment="Left" Margin="0,162,0,0" VerticalAlignment="Top" Height="28" Width="104" AutomationProperties.IsColumnHeader="True" Background="#FF1B1B1B" Foreground="#FFC50387" Grid.Row="2"/>
+
+
+            <Image HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="187" Source="/Monokayu1-Transparent.png" RenderTransformOrigin="0.508,0.494" OpacityMask="#FF9F4444"/>
         </Grid>
 
-        <Button x:Name="BtnOn" Tag="btnON" Content="Turn On" HorizontalAlignment="Left" Margin="611,95,0,0" VerticalAlignment="Top" Click="btnOnHandler"/>
-        <Button x:Name="BtnOff" Tag="btnOff" Content="Turn Off" HorizontalAlignment="Left" Margin="611,262,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-        <Label Content="Channel" HorizontalAlignment="Left" Margin="136,191,0,0" VerticalAlignment="Top"/>
+        <Menu Margin="504,10,213,377" Foreground="#FFE0E0E0">
+            <Menu.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF6986A6" Offset="1"/>
+                </LinearGradientBrush>
+            </Menu.Background>
+            <MenuItem Header="_Channel">
+                <MenuItem Header="1" />
+                <MenuItem Header="2" />
+                <MenuItem Header="_Exit" />
+            </MenuItem>
+        </Menu>
+
 
 
     </Grid>
