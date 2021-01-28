@@ -23,7 +23,7 @@ namespace RadioWPF
     {
 
         private Radio _radio;
-        private int channelSelected;
+        private int _channelSelected;
 
         public MainWindow()
         {
@@ -43,8 +43,32 @@ namespace RadioWPF
 
         private void BtnPlay_Click(object sender, RoutedEventArgs e)
         {
+            _channelSelected = _radio.Channel;
             string result = _radio.Play();
             labelChannel.Content = result;
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            var menuItem = sender as MenuItem;
+            if (menuItem != null)
+            {
+                switch (menuItem.Name)
+                {
+                    case "_1":
+                        _radio.Channel = int.Parse(menuItem.Name.Remove(0, 1));
+                        break;
+                    case "_2":
+                        _radio.Channel = int.Parse(menuItem.Name.Remove(0, 1));
+                        break;
+                    case "_3":
+                        _radio.Channel = int.Parse(menuItem.Name.Remove(0, 1));
+                        break;
+                    case "_4":
+                        _radio.Channel = int.Parse(menuItem.Name.Remove(0, 1));
+                        break;
+                }
+        }
+    }
     }
 }

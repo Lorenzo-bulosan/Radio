@@ -56,9 +56,11 @@
                 </LinearGradientBrush>
             </Menu.Background>
             <MenuItem Header="_Channel">
-                <MenuItem Header="1" />
-                <MenuItem Header="2" />
-                <MenuItem Header="_Exit" />
+                <MenuItem Header="1" Click="MenuItem_Click" Name="_1"/>
+                <MenuItem Header="2" Click="MenuItem_Click" Name="_2"/>
+                <MenuItem Header="3" Click="MenuItem_Click" Name="_3"/>
+                <MenuItem Header="4" Click="MenuItem_Click" Name="_4"/>
+                
             </MenuItem>
         </Menu>
 
