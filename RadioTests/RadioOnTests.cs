@@ -40,7 +40,7 @@ namespace RadioTests
             // arrange
             _radio.Channel = 4;
             // act
-            var message = _radio.Play();
+            var message = _radio.Play().text;
             // assert
             Assert.AreEqual("Playing channel 4", message);
             

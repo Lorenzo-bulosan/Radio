@@ -23,12 +23,11 @@ namespace RadioWPF
     {
 
         private Radio _radio;
-        private int _channelSelected;
 
         public MainWindow()
         {
             _radio = new Radio();
-            InitializeComponent();
+            InitializeComponent(); 
         }
 
         private void BtnOn_Click(object sender, RoutedEventArgs e)
@@ -39,13 +38,22 @@ namespace RadioWPF
         private void BtnOff_Click(object sender, RoutedEventArgs e)
         {
             _radio.TurnOff();
+            MediaPlayer.Stop();
         }
 
         private void BtnPlay_Click(object sender, RoutedEventArgs e)
         {
-            _channelSelected = _radio.Channel;
-            string result = _radio.Play();
+            // display text
+            string result = _radio.Play().text;
             labelChannel.Content = result;
+
+            // play selected channel if on
+            if (_radio.Play().toPlay)
+            {
+                MediaPlayer.Source = new Uri(_radio.channelSources[_radio.Channel], UriKind.RelativeOrAbsolute);
+                MediaPlayer.Play();
+            }
+            
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -68,7 +76,9 @@ namespace RadioWPF
                         _radio.Channel = int.Parse(menuItem.Name.Remove(0, 1));
                         break;
                 }
+            }
         }
     }
-    }
 }
+
+

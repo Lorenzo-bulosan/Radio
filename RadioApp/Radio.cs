@@ -7,6 +7,18 @@ namespace RadioApp
     {
         private int _channel = 1;
         private bool _on = false;
+        public Dictionary<int, string> channelSources;
+
+        public Radio()
+        {
+            Dictionary<int, string> channelDictionary = new Dictionary<int, string>();
+            channelDictionary.Add(1, "http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio1_mf_p");
+            channelDictionary.Add(2, "http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio2_mf_p");
+            channelDictionary.Add(3, "http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio3_mf_p");
+            channelDictionary.Add(4, "http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio4fm_mf_p");
+
+            channelSources = channelDictionary;
+        }
 
         public int Channel 
         { 
@@ -15,17 +27,15 @@ namespace RadioApp
 
             set
             {
-                List<int> possibleChannels = new List<int> { 1, 2, 3, 4 };    
-                
-                if(possibleChannels.Contains(value) && _on){
+                if(channelSources.ContainsKey(value) && _on){
                     _channel = value;
                 }
             } 
         }
 
-        public string Play()
+        public (string text, bool toPlay) Play()
         {
-            return _on? $"Playing channel {Channel}" : "Radio is off";
+            return ((_on? $"Playing channel {Channel}" : "Radio is off"), _on);
         }
 
         public void TurnOff()

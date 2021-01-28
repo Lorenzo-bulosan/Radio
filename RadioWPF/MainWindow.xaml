@@ -45,7 +45,7 @@
             <Label x:Name="labelChannel" Content="Channel: " HorizontalAlignment="Left" Margin="0,162,0,0" VerticalAlignment="Top" Height="28" Width="104" AutomationProperties.IsColumnHeader="True" Background="#FF1B1B1B" Foreground="#FFC50387" Grid.Row="2"/>
 
             <Image HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="187" Source="/Monokayu1-Transparent.png" RenderTransformOrigin="0.508,0.494" OpacityMask="#FF9F4444"/>
-            
+
         </Grid>
 
         <Menu Margin="504,10,213,377" Foreground="#FFE0E0E0">
@@ -60,10 +60,11 @@
                 <MenuItem Header="2" Click="MenuItem_Click" Name="_2"/>
                 <MenuItem Header="3" Click="MenuItem_Click" Name="_3"/>
                 <MenuItem Header="4" Click="MenuItem_Click" Name="_4"/>
-                
+
             </MenuItem>
         </Menu>
 
+        <MediaElement Name="MediaPlayer" LoadedBehavior="Manual" ></MediaElement>
 
 
     </Grid>
