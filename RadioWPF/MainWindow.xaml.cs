@@ -33,12 +33,14 @@ namespace RadioWPF
         private void BtnOn_Click(object sender, RoutedEventArgs e)
         {
             _radio.TurnOn();
+            labelChannel.Content = "Radio ON, select a station";
         }
 
         private void BtnOff_Click(object sender, RoutedEventArgs e)
         {
             _radio.TurnOff();
             MediaPlayer.Stop();
+            labelChannel.Content = "Radio OFF";
         }
 
         private void BtnPlay_Click(object sender, RoutedEventArgs e)
@@ -52,8 +54,8 @@ namespace RadioWPF
             {
                 MediaPlayer.Source = new Uri(_radio.channelSources[_radio.Channel], UriKind.RelativeOrAbsolute);
                 MediaPlayer.Play();
-            }
-            
+                screen.Content = $"BBC RADIO: {_radio.Channel}";
+            }     
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)

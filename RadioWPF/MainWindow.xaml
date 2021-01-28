@@ -18,13 +18,24 @@
             <Setter Property="FontFamily" Value="Forte"/>
         </Style>
 
+        <Style TargetType="MenuItem" >
+            <Setter Property="Background" Value="#FF073A3F"/>
+            <Setter Property="Foreground" Value="white"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+        </Style>
+
     </Window.Resources>
 
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="26*"/>
+            <RowDefinition Height="191*"/>
+        </Grid.RowDefinitions>
 
         <!--Body-->
-        <Grid Margin="0,0,0,0" Background="#FF1F1F1F">
+        <Grid Background="#FF1F1F1F" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="557*"/>
                 <ColumnDefinition Width="45*"/>
@@ -41,30 +52,28 @@
             <Button x:Name="BtnOff" Tag="btnOff" Grid.Column="2" Grid.Row="1" Content="Off"  Margin="0,0,0,0" Click="BtnOff_Click"/>
             <Button x:Name="BtnPlay" Tag="btnPlay" Grid.Column="2" Grid.Row="2" Content="Play"  Margin="0,0,0,0" Click="BtnPlay_Click"/>
 
-
-            <Label x:Name="labelChannel" Content="Channel: " HorizontalAlignment="Left" Margin="0,162,0,0" VerticalAlignment="Top" Height="28" Width="104" AutomationProperties.IsColumnHeader="True" Background="#FF1B1B1B" Foreground="#FFC50387" Grid.Row="2"/>
-
             <Image HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="187" Source="/Monokayu1-Transparent.png" RenderTransformOrigin="0.508,0.494" OpacityMask="#FF9F4444"/>
 
         </Grid>
 
-        <Menu Margin="504,10,213,377" Foreground="#FFE0E0E0">
-            <Menu.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="#FF6986A6" Offset="1"/>
-                </LinearGradientBrush>
-            </Menu.Background>
-            <MenuItem Header="_Channel">
-                <MenuItem Header="1" Click="MenuItem_Click" Name="_1"/>
-                <MenuItem Header="2" Click="MenuItem_Click" Name="_2"/>
-                <MenuItem Header="3" Click="MenuItem_Click" Name="_3"/>
-                <MenuItem Header="4" Click="MenuItem_Click" Name="_4"/>
-
+        <Menu Margin="10,334,717,0" Background="{x:Null}" Grid.Row="1">
+            <MenuItem Header="_Station" Width="67" Height="27">
+                <MenuItem Header="1" Click="MenuItem_Click" Name="_1" Foreground="Black" />
+                <MenuItem Header="2" Click="MenuItem_Click" Name="_2" Foreground="Black"/>
+                <MenuItem Header="3" Click="MenuItem_Click" Name="_3" Foreground="Black"/>
+                <MenuItem Header="4" Click="MenuItem_Click" Name="_4" Foreground="Black"/>
             </MenuItem>
         </Menu>
 
-        <MediaElement Name="MediaPlayer" LoadedBehavior="Manual" ></MediaElement>
+
+        <MediaElement Name="MediaPlayer" LoadedBehavior="Manual" Grid.RowSpan="2" ></MediaElement>
+        <Label x:Name="screen" Content="BBC RADIO" HorizontalAlignment="Left" 
+               Margin="183,103,0,0" VerticalAlignment="Top" Height="62" Width="auto" 
+               Foreground="#FF2CD73A" FontSize="40" Grid.Row="1" />
+        <Label x:Name="labelChannel" HorizontalAlignment="Left" 
+               Margin="88,334,0,0" VerticalAlignment="Top" Height="28" Width="auto" 
+               AutomationProperties.IsColumnHeader="True" Background="{x:Null}"
+               Foreground="#FFFAFAFA" Grid.Row="1"/>
 
 
     </Grid>
