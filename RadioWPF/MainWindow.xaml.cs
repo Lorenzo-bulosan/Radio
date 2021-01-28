@@ -27,7 +27,7 @@ namespace RadioWPF
         public MainWindow()
         {
             _radio = new Radio();
-            InitializeComponent(); 
+            InitializeComponent();
         }
 
         private void BtnOn_Click(object sender, RoutedEventArgs e)
@@ -52,9 +52,17 @@ namespace RadioWPF
             // play selected channel if on
             if (_radio.Play().toPlay)
             {
+
                 MediaPlayer.Source = new Uri(_radio.channelSources[_radio.Channel], UriKind.RelativeOrAbsolute);
                 MediaPlayer.Play();
-                screen.Content = $"BBC RADIO: {_radio.Channel}";
+
+                // show buffer message to user
+                while (MediaPlayer.IsBuffering)
+                {
+                    screen.Content = "Buffering...";
+                }
+
+                screen.Content =  $"BBC RADIO: {_radio.Channel}";
             }     
         }
 
