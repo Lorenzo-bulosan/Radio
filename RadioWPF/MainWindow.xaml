@@ -27,7 +27,6 @@
 
     </Window.Resources>
 
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="26*"/>
@@ -74,6 +73,12 @@
                Margin="88,334,0,0" VerticalAlignment="Top" Height="28" Width="auto" 
                AutomationProperties.IsColumnHeader="True" Background="{x:Null}"
                Foreground="#FFFAFAFA" Grid.Row="1"/>
+        <Slider x:Name="SliderVolumeChange" HorizontalAlignment="Left" Margin="428,344,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" 
+                Maximum="100" TickFrequency="5"
+                ValueChanged="Slider_ValueChanged"
+                />
+        <Label x:Name="screenVolume" Content="0" HorizontalAlignment="Left" Margin="553,336,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#FF00F50B"/>
+
 
 
     </Grid>

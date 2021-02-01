@@ -8,6 +8,18 @@ namespace RadioApp
         private int _channel = 1;
         private bool _on = false;
         public Dictionary<int, string> channelSources;
+        private double _volume = 0;
+
+        public double Volume {
+            get 
+            {
+                return _volume / 100;
+            }
+            set
+            {
+                if(value>0 && value < 100) { _volume = value; }
+            }
+        }
 
         public Radio()
         {

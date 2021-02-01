@@ -54,6 +54,7 @@ namespace RadioWPF
             {
 
                 MediaPlayer.Source = new Uri(_radio.channelSources[_radio.Channel], UriKind.RelativeOrAbsolute);
+                MediaPlayer.Volume = _radio.Volume;
                 MediaPlayer.Play();
 
                 // show buffer message to user
@@ -87,6 +88,13 @@ namespace RadioWPF
                         break;
                 }
             }
+        }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            _radio.Volume = SliderVolumeChange.Value;
+            MediaPlayer.Volume = _radio.Volume;
+            screenVolume.Content = Math.Round(_radio.Volume,2)*100;
         }
     }
 }
